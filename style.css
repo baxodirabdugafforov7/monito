@@ -1,0 +1,2050 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Font Setup */
+
+@font-face {
+    font-family: 'Gilroy';
+    src: url('fonts/Gilroy-Regular.woff2') format('woff2'),
+         url('fonts/Gilroy-Regular.woff') format('woff'),
+         url('fonts/Gilroy-Regular.ttf') format('truetype'),
+         url('fonts/Gilroy-Regular.eot'),
+         url('fonts/Gilroy-Bold.woff') format('woff'),
+         url('fonts/Gilroy-Bold.woff2') format('woff2'),
+         url('fonts/Gilroy-Bold.eot'),
+         url('fonts/Gilroy-Extrabold.woff2') format('woff2'),
+         url('fonts/Gilroy-Bold.ttf') format('truetype');
+}
+
+/* Root for Color */
+
+:root {
+    --dark-blue: #003459;
+    --mon-yellow: #F7DBA7;
+    --gray-light: #CCD1D2;
+    --main-text-color: #003459;
+    --text-color-gray: #667479;
+    --p-color: #242B33;
+    --mon-yellow-light: #FCEED5;
+    --button-color: #FDFDFD;
+    --white-color: white;
+    --blue-color:rgb(154, 154, 255);
+}
+
+html {
+    font-size: 62.5%;
+    font-family: "Gilroy", sans-serif;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Gilroy", sans-serif;
+    
+    
+}
+
+
+/* Basic classes */
+
+.btn1 {
+    border-radius: 6rem;
+    outline: none;
+    border: none;
+    background-color: var(--main-text-color);
+    color: var(--button-color);
+    font-weight: bold;
+    font-size: 1.6rem;
+    width: 18.7rem;
+    height: 4.6rem;
+    transition: all 0.3s linear;
+}
+
+.btn1:hover {
+    background-color: var(--mon-yellow-light);
+}
+
+
+.btn2 {
+    border: 2px solid var(--main-text-color);
+    border-radius: 6rem;
+    outline: none;
+    color: var(--main-text-color);
+    width: 18.7rem;
+    height: 4.6rem;
+    background-color: var(--mon-yellow-light);
+    transition: all 0.3s linear;
+}
+
+.btn2:hover {
+    background-color: var(--dark-blue);
+}
+
+h1 {
+    font-size: 6rem;
+    color: var(--main-text-color);
+}
+
+h2 {
+    font-size: 4rem;
+    color: var(--main-text-color);
+}
+
+/* Header Styles */
+
+header {
+    
+    position: fixed;
+    display: flex;
+    padding: 2.8rem 13rem;
+    flex-direction: row;
+    justify-content: space-between;
+    z-index: 1009;
+    width: 100%;
+    height: 11.6rem;
+    background-color: var(--mon-yellow-light);
+    .headerLeft #monitoLogoImg {
+        position: relative;
+        z-index: 1001;
+        right: 2rem;
+    }
+
+    /* Rectangle in the background of monito logo */
+
+    .monitoBackground {
+        position: relative;
+        bottom: 7rem;
+        right: 13rem;
+    }
+
+    /* Main style for anything other than logo on header*/
+
+    .headerRight {
+        display: flex;
+        gap: 4.8rem;
+        position: relative;
+        right: 29rem;
+        align-items: center;
+        bottom: 1.2rem;
+
+        .burger {
+            display: none;
+        }
+    }
+
+    /* Navbar styles */
+
+    nav {
+        ul {
+            display: flex;
+            gap: 4rem;
+            li {
+                list-style: none;
+                
+                a {
+                    text-decoration: none;
+                    font-size: 1.6rem;
+                    color: var(--main-text-color);
+                    font-weight: 600;
+                    transition: all 0.3s ease-in-out;
+                    border-bottom: 2px solid var(--mon-yellow-light);
+
+                }
+                a:hover {
+                    border-bottom: 2px solid var(--main-text-color);
+                    font-size: 1.7rem;
+                }
+            }
+
+        }
+    }
+
+    /* Form styles */
+
+    form {
+        i {
+            position: relative;
+            left: 10rem;
+        }
+
+        input {
+            width: 30rem;
+            height: 4.6rem;
+            border-radius: 6rem;
+            border: none;
+            outline: none;
+            position: relative;
+            padding-left: 5rem;
+            top: 1rem;
+        }
+
+        .search-icon {
+            position: relative;
+            bottom: 2.2rem;
+            right: 8rem;
+
+            i {
+                font-size: 2rem;
+
+            }
+        }
+    }
+
+    .btn1 {
+        border: 2px solid var(--main-text-color);
+        color: var(--mon-yellow-light);
+    }
+
+    .btn1:hover {
+        color: var(--main-text-color);
+    }
+
+    /* Dropdown for language selection */
+
+    /* General dropdown container styling */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+/* Dropdown icon styling */
+.dropdown-icon {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 1.6rem;
+}
+
+/* Dropdown menu styling */
+.menu {
+    list-style: none;
+    position: absolute;
+    top: 100%; /* Positioned below the dropdown icon */
+    left: 0;
+    margin: 0;
+    padding: 0;
+    background-color: white;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    border-radius: 5px;
+    width: 120px;
+    display: none; /* Hidden by default */
+    z-index: 100;
+}
+
+#menu-toogle {
+    display: none;
+}
+
+.menu li {
+    padding: 10px;
+}
+
+.menu li a {
+    text-decoration: none;
+    color: black;
+    font-size: 3rem;
+    display: block;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.menu li a:hover {
+    background-color: #476597;
+    color: white;
+}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .menu {
+    display: block;
+    animation: slide-down 0.3s linear;
+}
+
+/* Slide-down animation */
+@keyframes slide-down {
+    from {
+        transform: translateY(-10px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+
+
+/* Styles for Burger menu */
+
+
+.burger {
+    position: relative;
+}
+
+/* Hide the checkbox */
+#menu-toggle {
+    display: none;
+}
+
+/* Styling the burger icon */
+.burger-icon {
+    cursor: pointer;
+    font-size: 5rem; /* Adjust the size of the burger icon */
+    color: #333; /* Default color */
+    align-items: center;
+}
+
+/* Dropdown menu styles */
+.menu {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    background-color: white;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    border-radius: 5px;
+    position: absolute;
+    top: 100%; /* Positioned just below the icon */
+    left: 0;
+    width: 200px; /* Adjust the width */
+    display: none; /* Hidden by default */
+    z-index: 100;
+    transform-origin: top;
+    transition: all 0.3s ease;
+}
+
+/* Menu item styles */
+.menu li {
+    padding: 10px;
+    text-align: center;
+}
+
+.menu li a {
+    text-decoration: none;
+    color: black;
+    font-size: 1rem;
+    display: block;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.menu li a:hover {
+    background-color: #3b598c;
+    color: white;
+}
+
+/* Show the menu when checkbox is checked */
+#menu-toggle:checked ~ .menu {
+    display: block;
+    animation: slide-down 0.3s ease forwards;
+}
+
+/* Slide-down animation */
+@keyframes slide-down {
+    from {
+        transform: translateY(-10px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+
+
+
+
+
+
+        
+
+    search {
+        display: none;
+    }
+}
+
+/* Main Page styles */
+
+main {
+    scroll-margin-top: 20rem;
+    display: flex;
+    border-bottom-right-radius: 4rem;
+    border-bottom-left-radius: 4rem;
+    background-color: var(--mon-yellow-light);
+    padding: 10rem;
+    padding-top: 18rem;
+    height: 66rem;
+
+    /* Left side of Main Page */
+
+    .mainLeft {
+        width: 40%;
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+        p {
+            font-size: 1.6rem;
+        }
+        .btns {
+            display: flex;
+            gap: 2rem;
+            padding-top: 2rem;
+            .btn2 {
+                color: var(--main-text-color);
+                font-weight: bold;
+                display: flex;
+                align-items: center;
+                span {
+                    color: var(--mon-yellow-light);
+                    transition: all 0.3s linear;
+                }
+
+            }
+
+            .btn2:hover  {
+                background-color: var(--main-text-color);
+                color: var(--mon-yellow-light);
+            }
+
+            .btn2 i {
+                color: #003459;
+                transition: all 0.3s linear;
+            }
+
+            .btn2:hover i {
+                color: var(--mon-yellow-light);
+            }
+
+            .btn2:hover span {
+                color: var(--main-text-color);
+            }
+
+            .btn1 {
+                color: var(--mon-yellow-light);
+                border: 2px solid var(--main-text-color);
+            }
+
+            .btn1:hover {
+                color: var(--main-text-color);
+                background-color: var(--mon-yellow-light);
+            }
+        }
+
+    }
+
+    /* Right side of the Main side */
+
+    .mainRight {
+        width: 60%;
+        height: 100%;
+        img {
+            position: relative;
+            height: 100%;
+            bottom: 8rem;
+            width: 84rem;
+            height: 56rem;
+            padding-top: 1rem;
+        }
+    }
+}
+
+/* Puppy Shop Styles */
+
+.puppyShop {
+    scroll-margin-top: 14rem;
+    margin-top: 4rem;
+
+    /* Top of Puppy Shop Styles */
+
+    .puppyShopTop {
+        display: flex;
+        justify-content: space-between;
+        padding: 0 10rem;
+        align-items: center;
+        .puppyShopTopText {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            
+            p {
+                font-size: 1.5rem;
+                color: var(--main-text-color);
+            }
+            h4 {
+                color: var(--main-text-color);
+                font-size: 2rem;
+            }
+        }
+
+        .btn1 {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+            border: 2px solid var(--main-text-color);
+            background-color: var(--white-color);
+            width: 16rem;
+            height: 4rem;
+            p {
+                font-size: 1.4rem;
+                color: var(--main-text-color);
+                transition: all 0.3s linear;
+            }
+
+        }
+
+        .btn1 i {
+            color: #003459;
+            transition: all 0.3s linear;
+        }
+
+        .btn1:hover {
+            background-color: var(--dark-blue);
+        }
+
+        .btn1:hover p, .btn1:hover i {
+            color: var(--mon-yellow-light);
+        }
+    }
+
+    /* Content of Puppy Shop Section Styles */
+
+    .puppyShopContent {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        padding: 2rem 10rem;
+        gap: 2rem;
+        .content {
+            border-radius: 1.2rem;
+            padding: 1.4rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease-in-out;
+            img {
+                border-radius: 1.2rem;
+            }
+            h3 {
+                margin-top: 1rem;
+                font-size: 1.6rem;
+            }
+            p {
+                font-weight: 500;
+                margin-top: 1rem;
+                color: var(--text-color-gray);
+                font-size: 1.2rem;
+                margin-bottom: 1rem;
+                transition: all 0.3s linear;
+            }
+            #cost {
+
+                font-size: 1.2rem;
+                font-weight: 700;
+            
+            }
+        }
+
+        .content:hover {
+            transform: scale(1.1);
+            background-color: var(--main-text-color);
+            color: var(--white-color);
+        }
+
+        .content:hover p {
+            color: var(--white-color);
+        }
+    }
+}
+
+/* Banner 1 Styles */
+
+.banner1 {
+    margin: 4rem 10rem;
+    background-color: var(--dark-blue);
+    border-radius: 2rem;
+    height: 37.8rem;
+    .backgroundBanner1 {
+        z-index: 2;
+        #BnBc2 {
+            position: relative;
+            bottom: 31.7rem;
+            left: 59.8rem;
+            border-top-right-radius: 2rem;
+            border-bottom-right-radius: 2rem;
+        }
+
+        #BnBc3 {
+            display: none;
+        }
+        #BnBc1 {
+            position: relative;
+            top: 6.3rem;
+            border-bottom-left-radius: 2rem;
+        }
+    }
+
+    .banner1Content {
+        display: flex;
+        width: 100%;
+        position: relative;
+        bottom: 65rem;
+        z-index: 4;
+        img {
+            width: 40%;
+        }
+        .banner1ContentText {
+            width: 60%;
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+            padding-right: 4rem;
+            text-align: end;
+            #bannerText     {
+                font-size: 1.4rem;
+                padding-left: 20rem;
+            }
+
+            .btns {
+                display: flex;
+                gap: 2rem;
+                padding-top: 2rem;
+                justify-content: end;
+                margin-left: 1rem;
+                .btn2 {
+                    color: var(--main-text-color);
+                    font-weight: bold;
+                    width: 17rem;
+                }
+                .btn1 {
+                    color: var(--mon-yellow-light);
+                    width: 17rem;
+                }
+                .btn2:hover  {
+                    background-color: var(--main-text-color);
+                    color: var(--mon-yellow-light);
+                }
+    
+                .btn2 i {
+                    color: #003459;
+                    transition: all 0.3s linear;
+                }
+    
+                .btn2:hover i {
+                    color: var(--mon-yellow-light);
+                }
+    
+                .btn1 {
+                    color: var(--mon-yellow-light);
+                    border: 2px solid var(--main-text-color);
+                }
+    
+                .btn1:hover {
+                    color: var(--main-text-color);
+                    background-color: var(--mon-yellow-light);
+                }
+            }
+
+        }
+    }
+    
+}
+
+
+
+.productShop {
+    margin-top: 4rem;
+
+    /* Top of Product Shop Styles */
+
+    .productShopTop {
+        display: flex;
+        justify-content: space-between;
+        padding: 0 10rem;
+        align-items: center;
+        .productShopTopText {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+
+
+            p {
+                font-size: 1.5rem;
+                color: var(--main-text-color);
+            }
+            h4 {
+                color: var(--main-text-color);
+                font-size: 2rem;
+            }
+        }
+
+        .btn1 {
+            
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+            border: 2px solid var(--main-text-color);
+            background-color: var(--white-color);
+            width: 16rem;
+            height: 4rem;
+            p {
+                font-size: 1.4rem;
+                color: var(--main-text-color);
+                transition: all 0.3s linear;
+            }
+
+        }
+
+        .btn1 i {
+            color: var(--main-text-color);
+            transition: all 0.3s linear;
+        }
+
+        .btn1:hover i {
+            color: var(--mon-yellow-light);
+        }
+
+        .btn1:hover p {
+            color: var(--mon-yellow-light);
+        }
+
+        .btn1:hover {
+            background-color: var(--main-text-color);
+            color: var(--mon-yellow-light);
+        }
+    }
+
+    /* Content of Puppy Shop Section Styles */
+
+    .productShopContent {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        padding: 2rem 10rem;
+        gap: 2rem;
+        .content {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            border-radius: 1.2rem;
+            padding: 1.4rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s linear;
+            img {
+                border-radius: 1.2rem;
+                width: 100%;
+            }
+            h3 {
+                margin-top: 1rem;
+                font-size: 1.6rem;
+            }
+            p {
+                font-weight: 500;
+                margin-top: 1rem;
+                color: var(--text-color-gray);
+                font-size: 1.2rem;
+                margin-bottom: 1rem;
+            }
+            #cost {
+
+                font-size: 1.2rem;
+                font-weight: 700;
+            
+            }
+
+            .giftBox {
+                background-color: var(--mon-yellow-light);
+                margin-top: 1rem;
+                padding: .6rem;
+                display: flex;
+                border-radius: 1rem;
+                transition: all 0.3s linear;
+                img {
+                    height: 2rem;
+                    width: 2rem;
+                }
+
+                span {
+                    font-size: 1.3rem;
+                    font-weight: bold;
+                    padding-left: 1rem;
+                }
+            }
+        }
+
+        .content:hover {
+            transform: scale(1.1);
+            background-color: var(--main-text-color);
+            color: var(--white-color);
+        }
+
+        .content:hover p {
+            color: var(--white-color);
+        }
+
+        .content:hover .giftBox {
+            color: black;
+        }
+    }
+}
+
+
+/* Sponsors Styles */
+
+.sponsors {
+    scroll-margin-top: 12rem;
+    .sponsorsTop {
+        display: flex;
+        justify-content: space-between;
+        padding: 2rem 10rem;
+        align-items: center;
+        p {
+            font-size: 1.4rem;
+            
+        }
+
+        .btn1 {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+            border: 2px solid var(--main-text-color);
+            background-color: var(--white-color);
+            width: 16rem;
+            height: 4rem;
+            p {
+                font-size: 1.4rem;
+                color: var(--main-text-color);
+                transition: all 0.3s linear;
+            }
+
+        }
+
+        .btn1 i {
+            color: #003459;
+            transition: all 0.3s linear;
+        }
+
+        .btn1:hover {
+            background-color: var(--dark-blue);
+        }
+
+        .btn1:hover p, .btn1:hover i {
+            color: var(--mon-yellow-light);
+        }
+        
+    }
+
+    .sponsorsContent {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 7rem;
+        padding: 2rem 0;
+    }
+}
+
+/* Banner 2 Styles */
+
+.banner2 {
+    margin: 0 10rem;
+    height: 40rem;
+}
+
+
+.banner2Background {
+    width: 100%;
+    height: 37.9rem;
+    border-radius: 4rem;
+    background-color: var(--mon-yellow);
+    z-index: 3;
+    #shape1 {
+        position: relative;
+        border-bottom-left-radius: 4rem;
+        border-top-left-radius: 4rem;
+    }
+
+    #shape2 {
+        position: relative;
+        left: 54rem;
+        bottom: 31.5rem;
+        border-bottom-right-radius: 4rem;
+    }
+
+}
+
+.banner2Content {
+    position: relative;
+    z-index: 5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    bottom: 37.9rem;
+    img {
+        width: 47.4%;
+    }
+
+    .banner2ContentText {
+        display: flex;
+        flex-direction: column;
+        text-align: start;
+        gap: 1.4rem;
+        #bannerText {
+            font-size: 1.4rem;
+        }
+
+        .adoptionText {
+            display: flex;
+            img {
+                height: 5rem;
+                width: 5rem;
+                margin-top: 1rem;
+                margin-left: 1rem;
+            }
+        }
+
+        .btns {
+            display: flex;
+            gap: 2rem;
+            padding-top: 2rem;
+            .btn2 {
+                color: var(--main-text-color);
+                font-weight: bold;
+                display: flex;
+                align-items: center;
+
+            }
+
+
+
+            .btn2:hover  {
+                background-color: var(--main-text-color);
+                color: var(--mon-yellow-light);
+            }
+
+            .btn2 i {
+                color: #003459;
+                transition: all 0.3s linear;
+            }
+
+            .btn2:hover i {
+                color: var(--mon-yellow-light);
+            }
+
+            .btn1 {
+                color: var(--mon-yellow-light);
+                border: 2px solid var(--main-text-color);
+            }
+
+            .btn1:hover {
+                color: var(--main-text-color);
+                background-color: var(--mon-yellow-light);
+            }
+        }
+    }
+}
+
+/* Pet Knowledge Styles */
+
+.petKnowledge {
+    margin-top: 4rem;
+    padding: 0 10rem;
+    margin-bottom: 5rem;
+    .petKnowledgeTop {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        align-items: center;
+        .petKnowledgeTopText {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+
+            p {
+                font-size: 1.5rem;
+                color: var(--main-text-color);
+            }
+            h4 {
+                color: var(--main-text-color);
+                font-size: 2rem;
+            }
+        }
+
+        .btn1 {
+            
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+            border: 2px solid var(--main-text-color);
+            background-color: var(--white-color);
+            width: 16rem;
+            height: 4rem;
+            transition: all 0.3s linear;
+            p {
+                font-size: 1.4rem;
+                color: var(--main-text-color);
+                transition: all 0.3s linear;
+            }
+        }
+
+        .btn1 i {
+            color: #003459;
+            transition: all 0.3s linear;
+        }
+
+        .btn1:hover {
+            color: var(--mon-yellow-light);
+            background-color: var(--main-text-color);
+        }
+
+        .btn1:hover i {
+            color: var(--mon-yellow-light);
+        }
+
+        .btn1:hover p {
+            color:var(--mon-yellow-light)
+        }
+    }
+
+    .petKnowledgeContent {
+        margin-top: 2rem;
+        display: flex;
+        width: 100%;
+        gap: 2rem;
+
+        .content {
+            width: 33.3%;
+            border-radius: 1.2rem;
+            padding: 1.4rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            transition: all 0.3s linear;
+            img {
+                border-radius: 1.4rem;
+            }
+            span {
+                background-color: var(--blue-color);
+                font-size: 1.3rem;
+                width: 13rem;
+                text-align: center;
+                color: var(--white-color);
+                border-radius: 10rem;
+                height: 2.4rem;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+            h3 {
+                font-size: 2rem;
+            }
+
+            p {
+                font-size: 1.4rem;
+            }
+        }
+
+        .content:hover {
+            transform: scale(1.1);
+            background-color: var(--main-text-color);
+            color: var(--white-color);
+        }
+
+        .content:hover p {
+            color: var(--white-color);
+        }
+
+
+    }
+}
+
+/* Footer Styles */
+
+footer {
+    scroll-margin-top: 14rem;
+    background-color: var(--mon-yellow-light);
+    .register {
+        h2 {
+            color: var(--white-color);
+            font-size: 2.3rem;
+            width: 40%;
+        }
+        display: flex;
+        background-color: var(--dark-blue);
+        padding: 2rem;
+        margin: 10rem;
+        position: relative;
+        border-radius: 1.6rem;
+        top: 7rem;
+        gap: 1rem;
+        align-items: center;
+        justify-content: center;
+        height: 13rem;
+        .sub {
+            background-color: var(--white-color);
+            width: 74%;
+            height: 6rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 1.4rem;
+            gap: 1rem;
+            input {
+                width: 72%;
+                height: 4rem;
+                border-radius: 0.8rem;
+                outline: none;
+                border: 1px solid var(--text-color-gray);
+                padding-left: 2rem;
+            }
+            button {
+                width: 23%;
+                height: 4rem;
+                border-radius: 0.8rem;
+                outline: none;
+                border: none;
+                background-color: var(--dark-blue);
+                color: var(--white-color);
+                transition: all 0.3s linear;
+            }
+
+            button:hover {
+                background-color: var(--mon-yellow);
+                color: var(--main-text-color);
+            }
+        }
+    }
+
+    .footerNavigation {
+        display: flex;
+        margin: 4rem 10rem;
+        justify-content: space-between;
+        align-items: center;
+        ul {
+            display: flex;
+            gap: 6rem;
+            li {
+                list-style: none;
+                a {
+                    text-decoration: none;
+                    font-size: 1.8rem;
+                    color: black;
+                    border-bottom: 2px solid var(--mon-yellow-light);
+                    transition: all 0.3s linear;
+                }
+
+                a:hover {
+                    border-bottom: 2px solid black;
+                }
+
+            }
+        }
+
+        .navIcons {
+            display: flex;
+            flex-direction: row;
+            gap: 3rem;
+            i {
+                font-size: 3.2rem;
+                color: var(--main-text-color);
+                transition: all 0.3s linear;
+            }
+
+            i:hover {
+                transform: translateY(-0.5rem);
+            }
+
+        }
+    }
+
+    hr {
+        margin: 0 10rem;
+    }
+
+    .bottomFooter {
+        margin: 0 10rem;
+        padding: 2rem 0;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        p {
+            font-size: 1.4rem;
+            color: var(--text-color-gray);
+        }
+
+        .privacy {
+            display: flex;
+            gap: 3rem;
+            a {
+                font-size: 1.4rem;
+                text-decoration: none;
+                color: var(--text-color-gray);
+            }
+        }
+    }
+}
+
+
+/* Responsive Design for devices with 834px Screen */
+
+
+@media screen and (max-width: 834px) {
+
+
+    header {
+        display: flex;
+        flex-direction: row;
+        padding-top: 6rem;
+        height: 17rem;
+        .headerLeft {
+            #monitoLogoImg {
+                height: 6rem;
+                position: relative;
+                left: 62rem;
+            }
+            
+            .monitoBackground {
+                #topRec {
+                    height: 24rem;
+                    position: relative;
+                    bottom: 12rem;
+                    left: 6rem;
+                }
+            }
+        }
+        
+        
+        .headerRight {
+            padding-top: 3.4rem;
+            .burger {
+                display: flex;
+                position: relative;
+                font-size: 4rem;
+                bottom: 3rem;
+                right: 70rem;
+                a {
+                    z-index: 8;
+                    font-size: 4rem;
+                    padding-top: rem;
+                }
+            }
+
+
+            nav {
+                display: none;
+            }
+            input {
+                display: none;
+            }
+
+            .search-icon {
+                display: none;
+            }
+            button {
+                display: none;
+            }
+
+            .dropdown {
+                display: none;
+            }
+
+        }
+        search {
+            display: flex;
+            padding: 2rem;
+            margin-bottom: 4rem;
+            padding-left: 52rem;
+            i {
+                font-size: 4rem;
+                color: var(--main-text-color);
+            }
+        }
+    }
+
+    main {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding-top: 40rem;
+        width: 200%;
+        height: 137rem;
+        .mainLeft {
+            width: 100%;
+            text-align: center;
+
+            h1 {
+                font-size: 10rem;
+            }
+
+            h2 {
+                font-size: 6.4rem;
+            }
+
+            p {
+                margin: 0 40rem;
+                font-size: 2.4rem;
+            }
+
+            .btns {
+                align-items: center;
+                justify-content: center;
+                .btn2 {
+                    padding: none;
+                    text-align: center;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    width: 24rem;
+                    height: 6rem;
+                    p {
+                        width: 100%;
+                        padding: 2rem;
+                        position: relative;
+                        right: 1rem;
+                        font-size: 2rem;
+                        span {
+                            color: var(--mon-yellow-light);
+                            transition: all 0.3s linear;
+                        }
+                    }
+                    i {
+                        position: relative;
+                        right: 42rem;
+                    }
+                }
+
+                .btn2:hover span {
+                    color: var(--main-text-color);
+                }
+
+                .btn1 {
+                    width: 24rem;
+                    height: 6rem;
+                    font-size: 2rem;
+                }
+            }
+        }
+
+        .mainRight {
+            img {
+                position: relative;
+                top: 4.3rem;
+            }
+
+            
+
+
+
+
+            search {
+                display: inline-block;
+            }
+        }
+
+
+    }
+
+    .puppyShop {
+        width: 200%;
+        padding: 5rem 10rem;
+        .puppyShopTop {
+            .puppyShopTopText {
+                p {
+                    font-size: 2.4rem;
+                }
+
+                h4 {
+                    font-size: 3rem;
+                }
+            }
+
+            .btn1 {
+                width: 18rem;
+                height: 6rem;
+                p {
+                    font-size: 1.8rem;
+                }
+            }
+    
+        }
+        
+        .puppyShopContent {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            
+            scroll-margin-top: 20rem;
+            .content {
+                display: flex;
+                flex-direction: column;
+                width: 100%;
+                justify-content: space-between;
+                gap: 2rem;
+
+                h3 {
+                    font-size: 3rem;
+                }
+                p {
+                    font-size: 2rem;
+                }
+                #cost {
+                    font-size: 2.4rem;
+                }
+            }  
+        }
+    }
+
+
+    .banner1 {
+        position: relative;
+        left: 10rem;
+        width: 152%;
+        height: 120.4rem;
+        display: flex;
+        margin-left: 10rem;
+        align-items: center;
+        justify-content: center;
+        .backgroundBanner1 {
+            position: relative;
+            width: 100%;
+            #BnBc1 {
+                position: relative;
+                right: 9rem;
+                height: 36rem;
+                top: 80.2rem;
+                left: 18rem;
+
+            }
+
+            #BnBc2 {
+                display: none;
+            }
+
+            #BnBc3 {
+                display: flex;
+                height: 76rem;
+                position: relative;
+                bottom: 40.4rem;
+                left: 17.8rem;
+                border-top-left-radius: 2rem;
+
+            }
+        }
+
+        .banner1Content {
+            width: 200%;
+            position: relative;
+            padding: none;
+            display: flex;
+            flex-direction: column-reverse;
+            align-items: center;
+            justify-content: center;
+            top: 0rem;
+            right: 56rem;
+
+            img {
+                position: relative;
+                top: 10rem;
+                width: 200%;
+            }
+            .banner1ContentText {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 200%;
+                text-align: center;
+
+                h1 {
+                    font-size: 10rem;
+                }
+
+                h2 {
+                    font-size: 6.4rem;
+                }
+
+                #bannerText {
+                    font-size: 1.8rem;
+                    position: relative;
+                    right: 10rem;
+                }
+                .btns {
+                    .btn2 {
+                        width: 20rem;
+                        height: 6rem;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                    }
+
+                    .btn1 {
+                        width: 20rem;
+                        height: 6rem;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                    }
+                }
+            }
+        }
+    }
+
+    .productShop {
+        width: 200%;
+        padding: 0 10rem;
+        .productShopTop {
+            .productShopTopText {
+                p {
+                    font-size: 2.4rem;
+                }
+
+                h4 {
+                    font-size: 3rem;
+                }
+            }
+
+            .btn1 {
+                width: 18rem;
+                height: 6rem;
+                p {
+                    font-size: 1.8rem;
+                }
+            }
+        }
+        .productShopContent {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            .content {
+                h3 {
+                    font-size: 3.2rem;
+                }
+                
+                p {
+                    font-size: 2.2rem;
+                }
+
+                #cost {
+                    font-size: 3rem;
+                }
+
+                .giftBox {
+                    img {
+                        height: 2.8rem;
+                        width: 2.8rem;
+                    }
+                    span {
+                        font-size: 2.4rem;
+                    }
+                }
+            }
+        }
+    }
+
+    .sponsors {
+        display: none;
+    }
+
+    .banner2 {
+        display: none;
+    }
+
+    .petKnowledge {
+        width: 176%;
+        margin: 0 10rem;
+
+        .petKnowledgeTop {
+            .petKnowledgeTopText {
+                p {
+                    font-size: 2.4rem;
+                }
+
+                h4 {
+                    font-size: 3rem;
+                }
+            }
+
+            .btn1 {
+                width: 18rem;
+                height: 6rem;
+                p {
+                    font-size: 1.8rem;
+                }
+            }
+    
+        }
+
+
+
+        .petKnowledgeContent {
+            margin-top: 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            .content2,.content3 {
+                display: none;
+            }
+
+            .content {
+                width: 70rem;
+                height: 70rem;
+                span {
+                    width: 20rem;
+                    height: 4rem;
+                    font-size: 2rem;
+                }
+                h3 {
+                    font-size: 3rem;
+                }
+                p {
+                    font-size: 2.4rem;
+                }
+            }
+        }
+    }
+
+    footer {
+        width: 200%;
+        .register {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+            height: 20rem;
+            width: 76%;
+            position: relative;
+            left: 10rem;
+            h2 {
+                font-size: 2.7rem;
+            }
+            .sub {
+                padding: 1rem;
+                height: 10rem;
+                width: 60%;
+                input {
+                    width: 50%;
+                    height: 90%;
+                }
+                button {
+                    font-size: 1.6rem;
+                    width: 50%;
+                    height: 90%;
+                }
+            }
+        }
+
+        .footerNavigation {
+            display: flex;
+            flex-direction: column;
+            ul {
+
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                gap: 20rem;
+                margin-bottom: 2rem;
+                li a {
+                    font-size: 2.4rem;   
+                }
+            }
+
+            .navIcons {
+                gap: 4rem;
+            }
+        }
+
+        hr {
+            margin: 0 20rem;
+        }
+
+        .bottomFooter {
+            margin-top: 2rem;
+            padding: 1rem;
+
+            img {
+                height: 6rem;
+            }
+            p {
+                font-size: 1.8rem;
+            }
+
+            img {
+                position: relative;
+                bottom: 4rem;
+            }
+            .privacy {
+                position: relative;
+                top: 7rem;
+                a {
+                    font-size: 2rem;
+                }
+            }
+            display: flex;
+            flex-direction: column-reverse;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+        }
+
+    }
+
+}
+
+
+/* Responsive Design for devices with 414px Screen */
+
+
+@media screen and (max-width: 414px) {
+    header {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        .headerLeft {
+            #monitoLogoImg {
+                position: relative;
+                left: 48rem;
+                margin-right: 10rem;
+                z-index: 7;
+            }
+
+            .monitoBackground {
+                #topRec {
+                    position: relative;
+                    left: 14rem;
+                }
+            }
+        }
+        
+        search {
+            display: inline-block;
+            position: relative;
+            right: 28rem;
+        }
+    }
+
+    main {
+        width: 336%;
+        margin: 0;
+        padding: 0;
+        padding-top: 34rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 174rem;
+        .mainLeft {
+            text-align: start;
+            
+            h1 {
+                font-size: 14rem;
+                padding-left: 12rem;
+            }
+            h2 {
+                font-size: 9rem;
+                padding-left: 12rem;
+            }
+            p {
+                font-size: 4rem;
+                margin: 0 12rem;
+                text-align: start;
+            }
+
+            .btns {
+                .btn2 {
+                    height: 10rem;
+                    width: 30rem;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    gap: 0;
+                    p {
+                        font-size: 3.4rem;
+                        padding-left: 20rem;
+                    }
+                    i {
+                        position: relative;
+                        left: 0;
+                        right: 60rem;
+                        margin-right: 32rem;
+                        font-size: 8rem;
+                        height: 2rem;
+                        width: 2rem;
+                    }
+                }
+
+                .btn1 {
+                    height: 10rem;
+                    width: 30rem;
+                    font-size: 3.4rem;
+                }
+
+            }
+        }
+
+        .mainRight {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            img {
+                position: relative;
+                width: 160%;
+                height: 80%;
+                bottom: 80rem;
+            }
+        }
+    }
+
+    .puppyShop {
+        width: 330%;
+        padding: 0;
+        padding-left: 4rem;
+        margin-bottom: 16rem;
+        .puppyShopTop {
+
+            .puppyShopTopText {
+                p {
+                    font-size: 3.6rem;
+                }
+                h4 {
+                    font-size: 5rem;
+                }
+            }
+            .btn1 {
+                position: relative;
+                top: 320rem;
+                right: 48rem;
+                height: 10rem;
+                width: 100rem;
+                p, i {
+                    font-size: 3rem;
+                }
+            }
+        }
+    }
+
+    .banner1 {
+        position: relative;
+        right: 100rem;
+        width: 272%;
+        left: 0;
+        margin-left: 14rem;
+        height: 150rem;
+        .backgroundBanner1 {
+            width: 100%;
+            #BnBc1 {
+                height: 32rem;
+                position: relative;
+                top: 107.6rem;
+                left: 88rem;
+            }
+
+            #BnBc3 {
+                height: 79rem;
+                position: relative;
+                margin-left: 10rem;
+                margin-top: 18rem;
+                left: 0;
+                left: 77.6rem;
+                bottom: 60.7rem;
+                border-top-right-radius: 4rem;
+            }
+        }
+        .banner1Content {
+            margin-top: 20rem;
+            position: relative;
+            left: 0;
+            right: 0;
+            right: 60rem;
+            margin-right: 109rem;
+            margin-bottom: 31rem;
+            .banner1ContentText {
+                h1 {
+                    font-size: 11rem;
+                }
+                h2 {
+                    font-size: 8rem;
+                }
+    
+                #bannerText {
+                    font-size: 3rem;
+                    margin: 0 10rem;
+                }
+
+                .btns {
+                    .btn2 {
+                        height: 10rem;
+                        width: 30rem;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        gap: 0;
+                        p {
+                            font-size: 3.4rem;
+                            padding-left: 29rem;
+                            span {
+                                color: var(--mon-yellow-light);
+                                transition: all 0.3s linear;
+                            }
+                        }
+                        i {
+                            position: relative;
+                            left: 0;
+                            right: 60rem;
+                            margin-right: 32rem;
+                            font-size: 8rem;
+                            height: 2rem;
+                            width: 2rem;
+                        }
+                    }
+    
+                    .btn1 {
+                        height: 10rem;
+                        width: 30rem;
+                        font-size: 3.4rem;
+                    }
+                    .btn2:hover span {
+                        color: var(--main-text-color);
+                    }
+                }
+
+            }
+        }
+    }
+
+
+
+    .productShop {
+        display: none;
+    }
+
+    .petKnowledge {
+        width: 310%;
+        padding: 0;
+        .petKnowledgeTop {
+            margin-left: 6rem;
+            margin-right: 0;
+            padding-right: 0;
+            .petKnowledgeTopText {
+                p {
+                    font-size: 3rem;
+                    
+                }
+                h4 {
+                    font-size: 5rem;
+                    width: 50rem;
+                }
+            }
+            .btn1 {
+                position: relative;
+                top: 356rem;
+                right: 52rem;
+                height: 10rem;
+                width: 100rem;
+                p, i {
+                    font-size: 3rem;
+                }
+            }
+        }
+
+        .petKnowledgeContent {
+            
+            .content {
+                margin-right: 6rem;
+                display: flex;
+                width: 90%;
+                
+                height: 112rem;
+                span {
+                    height: 6rem;
+                    width: 30rem;
+                    font-size: 3rem;
+                }
+                h3 {
+                    font-size: 5rem;
+                }
+                p {
+                    font-size: 3.5rem;
+                }
+            }
+            display: flex;
+            flex-direction: column;
+        }
+        
+    }
+
+    footer {
+        
+        width: 336%;
+        padding: 0;
+        margin-top: 30rem;
+        box-sizing: border-box;
+        margin-right: 0;
+        margin-left: 0;
+
+        .register {
+            position: relative;
+            right: 0;
+            left: 0;
+            left: 6rem;
+            padding-left: 0;
+            height: 40rem;
+            margin-bottom: 12rem;
+            h2 {
+                font-size: 3.4rem;
+            }
+            .sub {
+                height: 24rem;
+                display: flex;
+                flex-direction: column;
+                input {
+                    width: 100%;
+                    font-size: 3rem;
+                }
+                button {
+                    width: 100%;
+                    font-size: 3rem;
+                }
+
+            }
+        }
+        .footerNavigation {
+            margin-bottom: 10rem;
+            ul li a {
+                font-size: 3rem;
+            }
+
+            .navIcons i {
+                font-size: 5rem;
+            }
+            .navIcons {
+                margin-top: 4rem;
+                #fb {
+                    padding-top: 1.3rem;
+                }
+            }
+        }
+
+        .bottomFooter {
+            img {
+                margin-top: 4rem;
+                height: 8rem;
+                width: 30rem;
+            }
+
+            .privacy {
+                position: relative;
+                top: 16rem;
+                a {
+                    font-size: 3rem;
+                }
+            }
+
+            p {
+                font-size: 3rem;
+                padding-top: 4rem;
+                padding-bottom: 4rem;
+            }
+        }
+    }
+}

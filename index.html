@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Monito</title>
+</head>
+<body>
+
+    <!-- Header Section -->
+
+
+
+    <header>
+
+        <div class="headerLeft">
+
+            <!-- Monito Logo -->
+
+            <img src="./icons/logos/monitoLogo.svg" alt="monitoLogo" id="monitoLogoImg">
+
+            <div class="monitoBackground">
+        
+                <!-- Monito Background Rec -->
+        
+                <img src="./shapes/topRec.png" alt="" id="topRec">
+            </div>
+
+            
+        </div>
+
+        <div class="headerRight">
+            <!-- Navigation Bar -->
+            
+            <div class="burger">
+
+                <input type="checkbox" id="menu-toggle">
+            
+                <label for="menu-toggle" class="burger-icon" style="display: flex; gap: 6px;">
+                    <i class="fa-solid fa-bars"></i>
+                </label>
+            
+                <ul class="menu">
+                  <li><a href="#home">Home</a></li>
+                  <li><a href="#category">Category</a></li>
+                  <li><a href="#about">About</a></li>
+                  <li><a href="#contact">Contact</a></li>
+                </ul>
+            
+            </div>
+
+
+
+            <nav>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#category">Category</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+
+            <!-- Search -->
+
+            <form action="">
+                <label for="search"></label>
+                <input type="text" id="search" placeholder="Search something here!">
+                <span class="search-icon"><i class="fa-solid fa-magnifying-glass" style="color: #83c2c3; height: 2rem;"></i></span>
+            </form>
+
+            <!-- joinCommunity button -->
+
+            <button class="btn1">
+                Join the community
+            </button>
+
+            <!-- dropDownLanguage -->
+
+            <div class="dropdown">
+
+                
+            
+                <label for="menu-toggle" class="dropdown-icon" style="display: flex; gap: 6px;">
+                    <p style="font-size: 1.6rem;">Eng</p>
+                    <i class="fa-solid fa-angle-down" style="color: #3b598c; font-size: 1.6rem; position: relative;"></i>
+                </label>
+            
+                <ul class="menu">
+                    <li><a href="#">Deu</a></li>
+                    <li><a href="#">Ara</a></li>
+                    <li><a href="#">Rus</a></li>
+                </ul>
+            
+            </div>
+
+            <search>
+                <i class="fa-solid fa-magnifying-glass"></i>
+            </search>
+
+
+        </div>
+    </header>
+
+    <!-- Main Page  -->
+
+    <main id="home">
+
+        <!-- Left side of Main Page -->
+
+        <div class="mainLeft">
+            
+            <h1>One More Friend</h1>
+            <h2>Thousand More Fun!</h2>
+            <p>
+                Having a pet means you have more joy, a new friend, a happy person who will always be with you to have fun. We have 200+ different pets that can meet your needs!
+            </p>
+
+            <div class="btns">
+                <button class="btn2" style="display: flex; gap: 2rem;
+                padding: 1rem; padding-left: 3.4rem; padding-top: 1rem;">
+                    <p>View<span>_</span>Intro</p>
+                    <i class="fa-regular fa-circle-play" style=" font-size: 2.2rem;"></i>
+                </button>
+                <button class="btn1">
+                    Explore Now
+                </button>
+            </div>
+
+        </div>
+
+        <!-- Right side of Main page -->
+
+        <div class="mainRight">
+            <img src="./images/coverImages/cover1.png" alt="">
+        </div>
+    </main>
+
+    <!-- Puppy Shop Section -->
+
+    <section class="puppyShop" id="category">
+
+        <!-- Top of Puppy Shop Section -->
+
+        <div class="puppyShopTop">
+            <div class="puppyShopTopText">
+                <p>Whats new?</p>
+                <h4>Take A Look At Some Of Our Pets</h4>
+            </div>
+            <button class="btn1">
+                <p>View more</p>
+                <i class="fa-solid fa-angle-right"></i>
+            </button>
+        </div>
+
+        <!-- Content of Puppy Shop Section -->
+
+        <div class="puppyShopContent">
+            <div class="content content1">
+                <img src="./images/puppyImages/puppiesForSale/MO231.jpg" alt="">
+                <h3>MO231 - Pomeranian White</h3>
+                <p>Gene: <span style="font-weight: bold;">Male</span> •  Age: <span style="font-weight: bold;">02 months</span></p>
+                <span id="cost">6.900.000 VND</span>
+            </div>
+            <div class="content content2">
+                <img src="./images/puppyImages/puppiesForSale/MO502.jpg" alt="">
+                <h3>MO231 - Pomeranian White</h3>
+                <p>Gene: <span style="font-weight: bold;">Female</span> •  Age: <span style="font-weight: bold;">02 months</span></p>
+                <span id="cost">3.900.000 VND</span>
+            </div>
+            <div class="content content3">
+                <img src="./images/puppyImages/puppiesForSale/MO102.jpg" alt="">
+                <h3>MO502 - Poodle Tiny Yellow</h3>
+                <p>Gene: <span style="font-weight: bold;">Male</span> •  Age: <span style="font-weight: bold;">02 months</span></p>
+                <span id="cost">4.000.000 VND</span>
+            </div>
+            <div class="content content4">
+                <img src="./images/puppyImages/puppiesForSale/MO512.jpg" alt="">
+                <h3>MO102 - Poodle Tiny Sepia</h3>
+                <p>Gene: <span style="font-weight: bold;">Male</span> •  Age: <span style="font-weight: bold;">02 months</span></p>
+                <span id="cost">8.900.000 VND</span>
+            </div>
+            <div class="content content5">
+                <img src="./images/puppyImages/puppiesForSale/MO231_2.jpg" alt="">
+                <h3>MO231 - Pembroke Corgi Cream</h3>
+                <p>Gene: <span style="font-weight: bold;">Male</span> •  Age: <span style="font-weight: bold;"> 02 months</span></p>
+                <span id="cost">7.900.000 VND</span>
+            </div>
+            <div class="content content6">
+                <img src="./images/puppyImages/puppiesForSale/MO502_2.jpg" alt="">
+                <h3>MO502 - Pembroke Corgi Tricolor</h3>
+                <p>Gene: <span style="font-weight: bold;">Female</span> •  Age: <span style="font-weight: bold;">02 months</span></p>
+                <span id="cost">9.000.000 VND</span>
+            </div>
+            <div class="content content7">
+                <img src="./images/puppyImages/puppiesForSale/MO231_3.jpg" alt="">
+                <h3>MO231 - Pomeranian White</h3>
+                <p>Gene: <span style="font-weight: bold;">Female</span> •  Age: <span style="font-weight: bold;">02 months</span></p>
+                <span id="cost">6.500.000 VND</span>
+            </div>
+            <div class="content content8">
+                <img src="./images/puppyImages/puppiesForSale/MO512_2.jpg" alt="">
+                <h3>MO512 - Poodle Tiny Dairy Cow</h3>
+                <p>Gene: <span style="font-weight: bold;">Female</span> •  Age: <span style="font-weight: bold;">02 months</span></p>
+                <span id="cost">5.000.000 VND</span>
+            </div>
+        </div>
+    </section>
+
+<!-- Banner 1 Section -->
+
+    <section class="banner1">
+        <div class="backgroundBanner1">
+            <img src="./shapes/cover2Background.jpg" alt="" id="BnBc1">
+            <img src="./shapes/bannerRecIpad.png" alt="" id="BnBc3">
+            <img src="./shapes/oneMoreFriendBackground.jpg" alt="" id="BnBc2">
+        </div>
+
+        <div class="banner1Content mainLeft">
+            <img src="./images/coverImages/cover2.png" alt="">
+            <div class="banner1ContentText">
+                <h1>One More Friend</h1>
+                <h2>Thousand More Fun!</h2>
+                <p id="bannerText">
+                    Having a pet means you have more joy, a new friend, a happy person who will always be with you to have fun. We have 200+ different pets that can meet your needs!
+                </p>
+
+                <div class="btns">
+                    <button class="btn2" style="display: flex; align-items: center;
+                    justify-content: center; gap: 2rem;">
+                        <p>View<span> </span>Intro</p>
+                        <i class="fa-regular fa-circle-play" style="font-size: 2.2rem;"></i>
+                    </button>
+                    <button class="btn1">
+                        Explore Now
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Product Section -->
+
+    <section class="productShop">
+
+        <!-- Top of Product Section -->
+
+        <div class="productShopTop">
+            <div class="productShopTopText">
+                <p>Hard to choose right products for your pets?</p>
+                <h4>Our Products</h4>
+            </div>
+            <button class="btn1">
+                <p>View more</p>
+                <i class="fa-solid fa-angle-right"></i>
+            </button>
+        </div>
+
+        <!-- Content of Product Section -->
+
+        <div class="productShopContent">
+            <div class="content content1">
+                <img src="./images/productImages/product1.jpg" alt="">
+                <h3>Reflex Plus Adult Cat Food Salmon</h3>
+                <p>Product: <span style="font-weight: bold;">Dog Food</span>  •  Size: <span style="font-weight: bold;">385gm</span></p>
+                <span id="cost">140.000</span>
+                <div class="giftBox">
+                    <img src="./icons/viewIcons/giftBox.svg" alt="">
+                    <span>  •  <span> </span>Free Toy & Free Shaker</span>
+                </div>
+            </div>
+            <div class="content content2">
+                <img src="./images/productImages/product2.jpg" alt="">
+                <h3>Reflex Plus Adult Cat Food Salmon</h3>
+                <p>Product: <span style="font-weight: bold;">Cat Food</span>  •  Size: <span style="font-weight: bold;">1.5kg</span></p>
+                <span id="cost">165.000 VND</span>
+                <div class="giftBox">
+                    <img src="./icons/viewIcons/giftBox.svg" alt="">
+                    <span>  •  <span> </span>Free Toy & Free Shaker</span>
+                </div>
+            </div>
+            <div class="content content3">
+                <img src="./images/productImages/product3.jpg" alt="">
+                <h3>Cat scratching ball toy kitten sisal rope ball</h3>
+                <p>Product: <span style="font-weight: bold;">Toy</span><span style="font-weight: bold;"></span></p>
+                <span id="cost">1.100.000 VND</span>
+                <div class="giftBox">
+                    <img src="./icons/viewIcons/giftBox.svg" alt="">
+                    <span>  •  <span> </span>Free Cat Food</span>
+                </div>
+            </div>
+            <div class="content content4">
+                <img src="./images/productImages/product4.jpg" alt="">
+                <h3>Cute Pet Cat Warm Nest</h3>
+                <p>Product: <span style="font-weight: bold;">Toy</span><span style="font-weight: bold;"></span></p>
+                <span id="cost">410.000 VND</span>
+                <div class="giftBox">
+                    <img src="./icons/viewIcons/giftBox.svg" alt="">
+                    <span>  •  <span> </span>Free Cat Food</span>
+                </div>
+            </div>
+            <div class="content content5">
+                <img src="./images/productImages/product5.jpg" alt="">
+                <h3>NaturVet Dogs - Omega-Gold Plus Salmon Oil</h3>
+                <p>Product: <span style="font-weight: bold;">Dog Food</span>  •  Size: <span style="font-weight: bold;"> 385gm</span></p>
+                <span id="cost">350.000 VND</span>
+                <div class="giftBox">
+                    <img src="./icons/viewIcons/giftBox.svg" alt="">
+                    <span>  •  <span> </span>Free Toy & Free Shaker</span>
+                </div>
+            </div>
+            <div class="content content6">
+                <img src="./images/productImages/product6.jpg" alt="">
+                <h3>Costumes Fashion Pet Clother Cowboy Rider</h3>
+                <p>Product: <span style="font-weight: bold;">Costume</span>  •  Size: <span style="font-weight: bold;">1.5kg</span></p>
+                <span id="cost">500.000 VND</span>
+                <div class="giftBox">
+                    <img src="./icons/viewIcons/giftBox.svg" alt="">
+                    <span>  •  <span> </span>Free Toy & Free Shaker</span>
+                </div>
+            </div>
+            <div class="content content7">
+                <img src="./images/productImages/product7.jpg" alt="">
+                <h3>Costumes Chicken Drumsti ck Headband</h3>
+                <p>Product: <span style="font-weight: bold;">Costume</span><span style="font-weight: bold;"></span></p>
+                <span id="cost">400.000 VND</span>
+                <div class="giftBox">
+                    <img src="./icons/viewIcons/giftBox.svg" alt="">
+                    <span>  •  <span> </span>Free Cat Food</span>
+                </div>
+            </div>
+            <div class="content content8">
+                <img src="./images/productImages/product8.jpg" alt="">
+                <h3>Plush Pet Toy</h3>
+                <p>Product: <span style="font-weight: bold;">Toy</span><span style="font-weight: bold;"></span></p>
+                <span id="cost">250.000 VND</span>
+                <div class="giftBox">
+                    <img src="./icons/viewIcons/giftBox.svg" alt="">
+                    <span>  •  <span> </span>Free Toy & Free Shaker</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sponsors Section -->
+
+    <section class="sponsors" id="about">
+
+        <!-- Top of Sponsors Section -->
+
+        <div class="sponsorsTop">
+
+            <p>Proud to be part of <span style="color: var(--main-text-color); font-size: 2rem; font-weight: 600;"> Pet Sellers</span></p>
+            <button class="btn1">
+                <p>View all our sellers</p>
+                <i class="fa-solid fa-angle-right"></i>
+            </button>
+        </div>
+
+        <!-- Content of Sponsors Section -->
+
+        <div class="sponsorsContent">
+            <img src="./icons/logos/sheba.svg" alt="">
+            <img src="./icons/logos/whiskas.svg" alt="">
+            <img src="./icons/logos/bakers.svg" alt="">
+            <img src="./icons/logos/felix.svg" alt="">
+            <img src="./icons/logos/goodBoy.svg" alt="">
+            <img src="./icons/logos/butchers.svg" alt="">
+            <img src="./icons/logos/pedigree.svg" alt="">
+        </div>
+
+    </section>
+
+    <section class="banner2">
+        
+        <div class="banner2Background">
+            <img src="./shapes/adoptionBackground.jpg" alt="" id="shape1">
+            <img src="./shapes/cover3Background.jpg" alt="" id="shape2">
+        </div>
+        
+        <div class="banner2Content mainLeft">
+            <div class="banner2ContentText">
+                <div class="adoptionText">
+                    <h1>Adoption</h1>
+                    <img src="./icons/viewIcons/puppyPaw.svg" alt="" id="#paw">
+                
+                </div>
+                <h2>We Need Help. So Do They. </h2>
+                <p id="bannerText">
+                    Adopt a pet and give it a home, <br>
+                    it will be love you back unconditionally.
+                </p>
+
+                <div class="btns">
+
+                    <button class="btn1">
+                        Explore Now
+                    </button>
+
+                    <button class="btn2" style="display: flex; gap: 2rem;
+                    padding: 1rem; padding-left: 3.4rem;">
+                        <p style="padding-top: .2rem; font-size: 1.6rem;">View Intro</p>
+                        <i class="fa-regular fa-circle-play" style="font-size: 2.2rem;"></i>
+                    </button>
+                </div>
+            </div>
+            <img src="./images/coverImages/cover3.png" alt="">
+        </div>
+    </section>
+
+    <!-- Pet Knowledge Section -->
+
+    <section class="petKnowledge">
+        <div class="petKnowledgeTop">
+            <div class="petKnowledgeTopText">
+                <p>You already know ?</p>
+                <h4>Useful Pet Knowledge</h4>
+            </div>
+            <button class="btn1">
+                <p>View more</p>
+                <i class="fa-solid fa-angle-right" ></i>
+            </button>
+        </div>
+
+        <div class="petKnowledgeContent">
+            <div class="content content1">
+                <img src="./images/puppyImages/petKnowledge/petKnowledge_1.jpg" alt="">
+                <span>Pet Knowledge</span>
+                <h3>What is a Pomeranian? How to Identify Pomeranian Dogs</h3>
+                <p>
+                    The Pomeranian, also known as the Pomeranian (Pom dog), is always in the top of the cutest pets. Not only that, the small, lovely, smart, friendly, and skillful circus dog breed.
+                </p>
+            </div>
+            <div class="content content2">
+                <img src="./images/puppyImages/petKnowledge/petKnowledge_2.jpg" alt="">
+                <span>Pet Knowledge</span>
+                <h3>Dog Diet You Need To Know</h3>
+                <p>
+                    Dividing a dog's diet may seem simple at first, but there are some rules you should know so that your dog can easily absorb the nutrients in the diet. For those who are just starting to raise dogs, especially newborn puppies with relatively weak resistance.
+                </p>
+            </div>
+            <div class="content content3">
+                <img src="./images/puppyImages/petKnowledge/petKnowledge_3.jpg" alt="">
+                <span>Pet Knowledge</span>
+                <h3>Why Dogs Bite and Destroy Furniture and How to Prevent It Effectively</h3>
+                <p>
+                    Dog bites are common during development. However, no one wants to see their furniture or important items being bitten by a dog.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+
+    <footer id="contact">
+        <div class="register">
+            <h2>Register Now So You Don't Miss Our Programs</h2>
+            <div class="sub">
+                <input type="email" placeholder="Enter your Email">
+                <button>Subscribe Now</button>
+            </div>
+        </div>
+
+        <div class="footerNavigation">
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#category">Category</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+
+            <div class="navIcons">
+                <i class="fa-brands fa-facebook fa-sm" style="margin-top: 1.3rem;" id="fb"></i>
+                <i class="fa-brands fa-twitter" ></i>
+                <i class="fa-brands fa-instagram"></i>
+                <i class="fa-brands fa-youtube"></i>
+            </div>
+        </div>
+
+        <hr>
+
+        <div class="bottomFooter">
+            <p>© 2022 Monito. All rights reserved.</p>
+            <img src="./icons/logos/monitoLogo.svg" alt="">
+            <div class="privacy">
+                <a href="" id="terms">Terms of Service</a>
+                <a href="">Privacy Policy</a>
+            </div>
+        </div>
+
+    </footer>
+
+</body>
+</html>
